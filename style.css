@@ -204,30 +204,8 @@ h2 {
   color: #fff;
 }
 
-.skill-progress {
-  margin-top: 2rem;
-}
 
-.progress-bar {
-  width: 80%;
-  height: 12px;
-  background: #e2e8f0;
-  border-radius: 8px;
-  margin: 0 auto;
-  overflow: hidden;
-}
 
-.progress-fill {
-  width: 85%;
-  height: 100%;
-  background: linear-gradient(90deg, #2563eb, #60a5fa);
-}
-
-#skill-percent {
-  color: #2563eb;
-  font-weight: 600;
-  margin-top: 0.5rem;
-}
 
 /* 🧱 PROJECTS */
 .project-grid {
@@ -409,3 +387,4 @@ footer {
     padding: 30px 20px;
   }
 }
+
