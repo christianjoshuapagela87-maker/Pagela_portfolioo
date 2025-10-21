@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christian Joshua Pagela | Developer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <div class="nav-logo">CJP<span>.</span></div>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1>Hello, I'm <span>Christian Joshua Pagela</span></h1>
+        <p>A passionate <strong>Software Developer</strong> who builds intuitive and scalable web applications.</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn primary">View Projects</a>
+          <a href="download_resume.php" class="btn outline" target="_blank">Download CV</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+  <img class="photo primary" src="profile.jpeg" alt="Christian Joshua Pagela">
+  <img class="photo secondary" src="profile2.jpg" alt="Christian Joshua Pagela Hover">
+</div>
+
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about section">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>I’m a dedicated developer focused on crafting clean, efficient, and user-friendly digital experiences. I enjoy turning complex ideas into simple, elegant interfaces that make an impact.</p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section">
+  <div class="container">
+    <h2>Skills</h2>
+    <p>Click a skill to see my proficiency level</p>
+    <div class="skill-tags">
+      <span data-skill="HTML" data-level="95">HTML</span>
+      <span data-skill="CSS" data-level="90">CSS</span>
+      <span data-skill="JavaScript" data-level="85">JavaScript</span>
+      <span data-skill="PHP" data-level="80">PHP</span>
+      <span data-skill="MySQL" data-level="75">MySQL</span>
+      <span data-skill="React" data-level="70">React</span>
+    </div>
+
+    <!-- Skill Progress Display -->
+    <div class="skill-progress">
+      <h3 id="skill-name">Click a skill above</h3>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progress-fill"></div>
+      </div>
+      <p id="skill-percent"></p>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Projects -->
+  <section id="projects" class="projects section">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="project-grid">
+        <div class="project-card">
+         <label for="Project 1"></label>
+          <h3>EduPlay LMS</h3>
+          <p>An interactive learning management system built with PHP and MySQL for modern education.</p>
+          <a href="#" class="btn small">View Project</a>
+        </div>
+        <div class="project-card">
+     <label for="Project 2"></label>
+          <h3>News & Articles Portal</h3>
+          <p>A dynamic content management platform for publishing, reading, and engaging with articles.</p>
+          <a href="#" class="btn small">View Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact-section">
+  <div class="contact-container">
+    <h2>Contact Me</h2>
+    <p>Let’s collaborate or talk about your next project!</p>
+
+    <form action="send_mail.php" method="POST" class="contact-form">
+      <div class="form-group">
+        <input type="text" name="name" id="name" required placeholder=" ">
+        <label for="name">Your Name</label>
+      </div>
+
+      <div class="form-group">
+        <input type="email" name="email" id="email" required placeholder=" ">
+        <label for="email">Your Email</label>
+      </div>
+
+      <div class="form-group">
+        <textarea name="message" id="message" rows="5" required placeholder=" "></textarea>
+        <label for="message">Your Message</label>
+      </div>
+
+      <button type="submit" class="btn-send">Send Message</button>
+    </form>
+  </div>
+</section>
+
+
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Christian Joshua Pagela. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
