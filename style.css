@@ -1,8 +1,13 @@
-/* Global Reset */
+/* 🌐 Global Reset */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
@@ -13,13 +18,13 @@ body {
   overflow-x: hidden;
 }
 
-/* Navbar */
+/* 🧭 Navbar */
 header {
   position: fixed;
   width: 100%;
-  background: rgba(255,255,255,0.85);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
-  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
   z-index: 1000;
 }
 
@@ -30,6 +35,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .nav-logo {
@@ -44,6 +50,7 @@ header {
   list-style: none;
   display: flex;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -57,11 +64,11 @@ header {
   color: #2563eb;
 }
 
-/* Hero Section */
+/* 🌄 Hero Section */
 .hero-content {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 8rem 2rem 6rem;
+  padding: 9rem 2rem 6rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
@@ -74,7 +81,7 @@ header {
 
 .hero-text h1 {
   font-family: 'Poppins', sans-serif;
-  font-size: 3rem;
+  font-size: clamp(2rem, 5vw, 3rem);
   margin-bottom: 1rem;
   color: #0f172a;
   line-height: 1.2;
@@ -85,7 +92,7 @@ header {
 }
 
 .hero-text p {
-  font-size: 1.1rem;
+  font-size: clamp(1rem, 2vw, 1.1rem);
   color: #475569;
   margin-bottom: 2rem;
   max-width: 500px;
@@ -93,23 +100,24 @@ header {
 
 .hero-buttons .btn {
   margin-right: 1rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Circular Hero Photo with Hover Transition */
+/* 🖼️ Hero Photo */
 .hero-photo {
   position: relative;
-  width: 320px;
-  height: 320px;
+  width: clamp(220px, 30vw, 320px);
+  height: clamp(220px, 30vw, 320px);
   margin: auto;
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.5s ease, box-shadow 0.4s ease;
 }
 
 .hero-photo:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(37,99,235,0.25);
+  box-shadow: 0 0 30px rgba(37, 99, 235, 0.25);
 }
 
 .hero-photo .photo {
@@ -121,19 +129,16 @@ header {
   transition: opacity 0.6s ease;
 }
 
-/* Default image visible */
 .hero-photo .primary {
   opacity: 1;
   z-index: 2;
 }
 
-/* Hover image hidden initially */
 .hero-photo .secondary {
   opacity: 0;
   z-index: 1;
 }
 
-/* On hover - fade in secondary, fade out primary */
 .hero-photo:hover .primary {
   opacity: 0;
 }
@@ -142,7 +147,7 @@ header {
   opacity: 1;
 }
 
-/* Buttons */
+/* 🟦 Buttons */
 .btn {
   padding: 0.8rem 1.6rem;
   border-radius: 10px;
@@ -175,7 +180,7 @@ header {
   transform: translateY(-2px);
 }
 
-/* Sections */
+/* 📦 Sections */
 .section {
   padding: 6rem 2rem;
 }
@@ -188,12 +193,12 @@ header {
 
 h2 {
   font-family: 'Poppins', sans-serif;
-  font-size: 2rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
   margin-bottom: 1.5rem;
   color: #0f172a;
 }
 
-/* Skills */
+/* 💡 Skills */
 .skill-tags {
   display: flex;
   flex-wrap: wrap;
@@ -215,17 +220,17 @@ h2 {
   transform: scale(1.1);
 }
 
-/* Projects */
+/* 🧱 Projects */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
 .project-card {
   background: white;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   padding: 1.5rem;
   text-align: left;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -233,7 +238,7 @@ h2 {
 
 .project-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
 .project-card img {
@@ -247,8 +252,7 @@ h2 {
   margin-bottom: 0.5rem;
 }
 
-/* Contact */
-/* Base Section */
+/* 📬 Contact Section */
 .contact-section {
   display: flex;
   justify-content: center;
@@ -283,7 +287,7 @@ h2 {
   font-size: 1.05rem;
 }
 
-/* Form Styling */
+/* ✍️ Form Styling */
 .contact-form .form-group {
   position: relative;
   margin-bottom: 30px;
@@ -362,76 +366,66 @@ h2 {
   }
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .contact-container {
-    padding: 40px 25px;
-  }
-  .contact-container h2 {
-    font-size: 1.8rem;
-  }
-}
-
-/* Responsive */
-@media (max-width: 900px) {
+/* 📱 Responsive Tweaks */
+@media (max-width: 1024px) {
   .hero-content {
     grid-template-columns: 1fr;
     text-align: center;
-  }
-
-  .hero-photo {
-    width: 260px;
-    height: 260px;
+    padding-top: 10rem;
   }
 
   .hero-text {
     order: 2;
   }
+
+  .hero-photo {
+    width: clamp(200px, 40vw, 280px);
+    height: clamp(200px, 40vw, 280px);
+  }
+
+  .nav-links {
+    gap: 1.2rem;
+  }
 }
 
-/* Skill Section Enhancement */
-.skill-progress {
-  margin-top: 3rem;
-  text-align: center;
-  transition: all 0.4s ease;
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+
+  .contact-container {
+    padding: 35px 20px;
+  }
+
+  .contact-container h2 {
+    font-size: 1.8rem;
+  }
+
+  .section {
+    padding: 4rem 1.5rem;
+  }
 }
 
-.skill-progress h3 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.5rem;
-  color: #0f172a;
-  margin-bottom: 1rem;
-  transition: color 0.3s ease;
-}
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
 
-.progress-bar {
-  width: 80%;
-  height: 12px;
-  background: #e2e8f0;
-  border-radius: 8px;
-  margin: 0 auto 0.5rem;
-  overflow: hidden;
-  box-shadow: inset 0 1px 4px rgba(0,0,0,0.1);
-}
+  .hero-text p {
+    font-size: 0.95rem;
+  }
 
-.progress-fill {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(90deg, #2563eb, #60a5fa);
-  border-radius: 8px;
-  transition: width 1s ease-in-out;
-}
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
 
-#skill-percent {
-  font-weight: 600;
-  color: #2563eb;
-  font-size: 1.1rem;
-  margin-top: 0.5rem;
-}
-
-.skill-tags span.active {
-  background: #2563eb;
-  color: #fff;
-  transform: scale(1.1);
-  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
 }
