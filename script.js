@@ -1,30 +1,36 @@
-<script>
-  const skillTags = document.querySelectorAll('.skill-tags span');
-  const progressFill = document.getElementById('progress-fill');
-  const skillName = document.getElementById('skill-name');
-  const skillPercent = document.getElementById('skill-percent');
+document.addEventListener("DOMContentLoaded", () => {
+  const skillTags = document.querySelectorAll(".skill-tags span");
+  const progressFill = document.getElementById("progress-fill");
+  const skillName = document.getElementById("skill-name");
+  const skillPercent = document.getElementById("skill-percent");
+
+  if (!skillTags.length || !progressFill) return;
 
   skillTags.forEach(tag => {
-    tag.addEventListener('click', () => {
-      skillTags.forEach(t => t.classList.remove('active'));
-      tag.classList.add('active');
+    tag.addEventListener("click", () => {
+      // Remove highlight from other tags
+      skillTags.forEach(t => t.classList.remove("active"));
+      tag.classList.add("active");
 
-      const name = tag.dataset.skill;
-      const percent = tag.dataset.percent;
+      // Get values properly (avoid undefined)
+      const name = tag.getAttribute("data-skill") || "Unknown";
+      const percent = tag.getAttribute("data-percent") || "0";
 
+      // Update text
       skillName.textContent = name;
-      skillPercent.textContent = percent + '%';
+      skillPercent.textContent = percent + "%";
 
-      progressFill.style.width = '0%';
+      // Animate progress bar
+      progressFill.style.width = "0%";
       setTimeout(() => {
-        progressFill.style.width = percent + '%';
-      }, 100);
+        progressFill.style.width = percent + "%";
+      }, 150);
     });
   });
 
-  // Initial fill animation
-  window.addEventListener('load', () => {
-    progressFill.style.width = '95%';
-  });
-</script>
-
+  // Default animation on load (HTML 95%)
+  progressFill.style.width = "0%";
+  setTimeout(() => {
+    progressFill.style.width = "95%";
+  }, 200);
+});
