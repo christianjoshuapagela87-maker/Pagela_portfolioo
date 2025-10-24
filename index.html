@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Christian Joshua Pagela | Developer Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  
+  <!-- CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- Progress bar -->
+  <div id="progress-container"><div id="progress-bar"></div></div>
+
+  <!-- Header -->
   <header>
     <nav class="navbar">
-      <div class="nav-logo">CJP<span>.</span></div>
+      <div class="nav-left">
+        <div class="nav-logo">CJP.<span style="font-size:1.2rem;">👋</span></div>
+      </div>
       <ul class="nav-links">
         <li><a href="#hero">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -20,25 +29,37 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
+      <button id="theme-toggle">🌙</button>
     </nav>
   </header>
 
   <!-- Hero -->
   <section id="hero" class="hero">
+    <div id="particles"></div>
     <div class="hero-content">
       <div class="hero-text">
-        <h1>Hello, I'm <span>Christian Joshua Pagela</span></h1>
-        <p>A passionate <strong>Software Developer</strong> who builds intuitive and scalable web applications.</p>
+        <h1>Hello, I’m <span class="accent">Christian Joshua Pagela</span></h1>
+        <p class="lead">
+          A passionate <strong>Software Developer</strong> who builds intuitive and scalable web applications.
+        </p>
         <div class="hero-buttons">
           <a href="#projects" class="btn primary">View Projects</a>
           <a href="download_resume.php" class="btn outline" target="_blank">Download CV</a>
         </div>
+        <div class="badges">
+          <span class="badge">HTML</span>
+          <span class="badge">CSS</span>
+          <span class="badge">JavaScript</span>
+          <span class="badge">PHP</span>
+          <span class="badge">MySQL</span>
+          <span class="badge">React</span>
+        </div>
       </div>
-      <div class="hero-photo">
-  <img class="photo primary" src="profile.jpeg" alt="Christian Joshua Pagela">
-  <img class="photo secondary" src="profile2.jpg" alt="Christian Joshua Pagela Hover">
-</div>
 
+      <div class="hero-photo">
+        <img class="photo primary" src="assets/profile1.jpg" alt="Christian Joshua Pagela">
+        <img class="photo secondary" src="assets/profile2.jpg" alt="Christian Joshua Pagela Hover">
+      </div>
     </div>
   </section>
 
@@ -46,34 +67,37 @@
   <section id="about" class="about section">
     <div class="container">
       <h2>About Me</h2>
-      <p>I’m a dedicated developer focused on crafting clean, efficient, and user-friendly digital experiences. I enjoy turning complex ideas into simple, elegant interfaces that make an impact.</p>
+      <p>
+        I’m a dedicated developer focused on crafting clean, efficient, and user-friendly digital experiences.
+        I enjoy turning complex ideas into simple, elegant interfaces that make an impact.
+      </p>
     </div>
   </section>
 
   <!-- Skills -->
-<section id="skills" class="section">
-  <div class="container">
-    <h2>Skills</h2>
-    <p>Click a skill to see my proficiency level</p>
+  <section id="skills" class="section">
+    <div class="container">
+      <h2>Skills</h2>
+      <p>Click a skill to see my proficiency level</p>
 
- <div class="skill-tags">
-  <span data-skill="HTML" data-percent="95">HTML</span>
-  <span data-skill="CSS" data-percent="90">CSS</span>
-  <span data-skill="JavaScript" data-percent="85">JavaScript</span>
-  <span data-skill="PHP" data-percent="80">PHP</span>
-  <span data-skill="MySQL" data-percent="88">MySQL</span>
-  <span data-skill="React" data-percent="70">React</span>
-</div>
-    <div class="skill-progress">
-      <h3 id="skill-name">HTML</h3>
-      <div class="progress-bar">
-        <div class="progress-fill" id="progress-fill"></div>
+      <div class="skill-tags">
+        <span data-skill="HTML" data-percent="95">HTML</span>
+        <span data-skill="CSS" data-percent="90">CSS</span>
+        <span data-skill="JavaScript" data-percent="85">JavaScript</span>
+        <span data-skill="PHP" data-percent="80">PHP</span>
+        <span data-skill="MySQL" data-percent="88">MySQL</span>
+        <span data-skill="React" data-percent="70">React</span>
       </div>
-      <div id="skill-percent">95%</div>
-    </div>
-  </div>
-</section>
 
+      <div class="skill-progress">
+        <h3 id="skill-name">HTML</h3>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progress-fill"></div>
+        </div>
+        <div id="skill-percent">95%</div>
+      </div>
+    </div>
+  </section>
 
   <!-- Projects -->
   <section id="projects" class="projects section">
@@ -81,13 +105,12 @@
       <h2>Projects</h2>
       <div class="project-grid">
         <div class="project-card">
-         <label for="Project 1"></label>
           <h3>EduPlay LMS</h3>
           <p>An interactive learning management system built with PHP and MySQL for modern education.</p>
           <a href="#" class="btn small">View Project</a>
         </div>
+
         <div class="project-card">
-     <label for="Project 2"></label>
           <h3>News & Articles Portal</h3>
           <p>A dynamic content management platform for publishing, reading, and engaging with articles.</p>
           <a href="#" class="btn small">View Project</a>
@@ -98,42 +121,37 @@
 
   <!-- Contact -->
   <section id="contact" class="contact-section">
-  <div class="contact-container">
-    <h2>Contact Me</h2>
-    <p>Let’s collaborate or talk about your next project!</p>
+    <div class="contact-container">
+      <h2>Contact Me</h2>
+      <p>Let’s collaborate or talk about your next project!</p>
 
-    <form action="send_mail.php" method="POST" class="contact-form">
-      <div class="form-group">
-        <input type="text" name="name" id="name" required placeholder=" ">
-        <label for="name">Your Name</label>
-      </div>
+      <form action="send_mail.php" method="POST" class="contact-form">
+        <div class="form-group">
+          <input type="text" name="name" id="name" required placeholder=" ">
+          <label for="name">Your Name</label>
+        </div>
 
-      <div class="form-group">
-        <input type="email" name="email" id="email" required placeholder=" ">
-        <label for="email">Your Email</label>
-      </div>
+        <div class="form-group">
+          <input type="email" name="email" id="email" required placeholder=" ">
+          <label for="email">Your Email</label>
+        </div>
 
-      <div class="form-group">
-        <textarea name="message" id="message" rows="5" required placeholder=" "></textarea>
-        <label for="message">Your Message</label>
-      </div>
+        <div class="form-group">
+          <textarea name="message" id="message" rows="5" required placeholder=" "></textarea>
+          <label for="message">Your Message</label>
+        </div>
 
-      <button type="submit" class="btn-send">Send Message</button>
-    </form>
-  </div>
-</section>
-
-
+        <button type="submit" class="btn-send">Send Message</button>
+      </form>
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer>
     <p>© 2025 Christian Joshua Pagela. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- JS -->
+  <script src="js/script.js"></script>
 </body>
 </html>
-
-
-
-
